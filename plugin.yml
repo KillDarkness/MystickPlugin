@@ -3,4 +3,17 @@ main: mysticmc.mystick.Main
 version: 1.0
 api-version: 1.21
 author: MysticMC
-description: Plugin básico para o servidor.
+description: Plugin com comandos e permissões.
+
+commands:
+  fly:
+    description: Ativa ou desativa o modo de voo.
+    usage: /fly [jogador]
+
+permissions:
+  mystick.fly:
+    description: Permite ativar/desativar o fly para si mesmo.
+    default: op
+  mystick.*:
+    description: Permite ativar/desativar o fly para outros jogadores.
+    default: op
