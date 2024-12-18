@@ -9,10 +9,14 @@ commands:
   fly:
     description: Ativa ou desativa o modo de voo.
     usage: /fly [jogador]
-
+  
   vanish:
     description: Ativa ou desativa o modo vanish.
     usage: /vanish [list]
+
+  ci:
+    description: Limpa o inventário do jogador.
+    usage: /ci [jogador]
 
 permissions:
   mystick.fly:
@@ -21,6 +25,12 @@ permissions:
   mystick.vanish:
     description: Permite ativar/desativar o vanish para si mesmo.
     default: op
+  mystick.ci.me:
+    description: Permite limpar o inventário de si mesmo.
+    default: op
+  mystick.ci.all:
+    description: Permite limpar o inventário de outros jogadores.
+    default: op
   mystick.*:
-    description: Permite ver jogadores no vanish e usar todos os comandos.
+    description: Permite ver jogadores no vanish, ativar/desativar o fly e limpar inventário de qualquer jogador.
     default: op
