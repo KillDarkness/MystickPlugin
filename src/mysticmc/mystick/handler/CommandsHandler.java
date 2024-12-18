@@ -3,6 +3,7 @@ package mysticmc.mystick.handler;
 import mysticmc.mystick.commands.FlyCommand;
 import mysticmc.mystick.commands.VanishCommand;
 import mysticmc.mystick.commands.CiCommand;
+import mysticmc.mystick.commands.EveryoneCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandMap;
 import org.bukkit.command.Command;
@@ -22,6 +23,8 @@ public class CommandsHandler {
         plugin.getCommand("clearinventory").setExecutor(new CiCommand());
         plugin.getCommand("ci").setExecutor(new CiCommand());
 
+        plugin.getCommand("everyone").setExecutor(new EveryoneCommand)
+
         // Desregistrar comandos de outros plugins, se necessário
         unregisterCommand(plugin, "fly");
 
@@ -30,6 +33,8 @@ public class CommandsHandler {
 
         unregisterCommand(plugin, "vanish")
         unregisterCommand(plugin, "v"); // Alias
+
+        unregisterCommand(plugin, "everyone")
     }
 
     public static void unregisterCommand(JavaPlugin plugin, String commandName) {

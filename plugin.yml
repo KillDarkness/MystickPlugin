@@ -18,6 +18,10 @@ commands:
     description: Limpa o inventário do jogador.
     usage: /ci [jogador]
 
+  everyone:
+    description: Envia um aviso Importante.
+    usage: /everyone <mensagem>
+
 permissions:
   mystick.fly:
     description: Permite ativar/desativar o fly para si mesmo.
@@ -30,6 +34,9 @@ permissions:
     default: op
   mystick.ci.all:
     description: Permite limpar o inventário de outros jogadores.
+    default: op
+  mystick.everyone:
+    description: Permite o jogandor enviar um aviso importante.
     default: op
   mystick.*:
     description: Permite ver jogadores no vanish, ativar/desativar o fly e limpar inventário de qualquer jogador.
