@@ -11,7 +11,10 @@ commands:
     usage: /fly [jogador]
   vanish:
     description: Ativa ou desativa o modo vanish.
-    usage: /vanish [list]
+    usage: /vanish [player/list]
+  v:
+    description: Ativa ou desativa o modo vanish.
+    usage: /vanish [player/list]
   ci:
     description: Limpa o inventário do jogador.
     usage: /ci [jogador]

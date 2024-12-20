@@ -5,8 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +17,7 @@ public class VanishCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length == 0) {
+            // Verifica se o remetente é um jogador
             if (!(sender instanceof Player)) {
                 sender.sendMessage("§cSomente jogadores podem ativar o vanish para si mesmos.");
                 return true;
@@ -70,18 +70,18 @@ public class VanishCommand implements CommandExecutor {
             vanishedPlayers.add(target);
             Bukkit.getOnlinePlayers().forEach(p -> {
                 if (!p.hasPermission("mystick.*")) {
-                    p.hidePlayer(target);
+                    p.hidePlayer(JavaPlugin.getProvidingPlugin(getClass()), target);
                 }
             });
 
             target.sendMessage("§b§lMystick §6§l》§aVocê está no modo vanish!");
-            target.sendActionBar("§aVocê está invisível para outros jogadores!");
+            sendActionBar(target, "§aVocê Está no modo &c&lVanish! &aOs jogadores não podem te ver.");
         } else {
             vanishedPlayers.remove(target);
-            Bukkit.getOnlinePlayers().forEach(p -> p.showPlayer(target));
+            Bukkit.getOnlinePlayers().forEach(p -> p.showPlayer(JavaPlugin.getProvidingPlugin(getClass()), target));
 
             target.sendMessage("§b§lMystick §6§l》§cVocê saiu do modo vanish!");
-            target.sendActionBar("§cVocê está visível novamente!");
+            sendActionBar(target, "§cVocê está visível novamente!");
         }
 
         if (executor instanceof Player && executor != target) {
@@ -89,5 +89,9 @@ public class VanishCommand implements CommandExecutor {
         } else if (!(executor instanceof Player)) {
             executor.sendMessage("§b§lMystick §6§l》§aO vanish de §e" + target.getName() + " §afoi " + (newState ? "ativado!" : "desativado!") + ".");
         }
+    }
+
+    private void sendActionBar(Player player, String message) {
+        player.sendMessage(message); // Método alternativo em caso de suporte limitado
     }
 }

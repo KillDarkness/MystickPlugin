@@ -1,0 +1,30 @@
+# |=======================================|
+# |                                       |
+# |          MYSTICK PLUGIN               |
+# |     Arquivo de Configuração           |
+# |             Discord                   |
+# |                                       |
+# |=======================================|
+
+# Passos para configurar o bot:
+
+# 1. Vá em https://discord.com/developers/applications
+# 2. Clique em "New Application" e crie sua aplicação.
+# 3. No menu lateral, clique em "BOT" e crie o bot.
+# 4. Desça até as "Privileged Gateway Intents" e ative as três:
+#    - Presence Intent
+#    - Server Members Intent
+#    - Message Content Intent
+# 5. Volte ao topo e clique em "Reset Token".
+# 6. Copie o token gerado e cole abaixo.
+
+# Token do bot Discord:
+token: "coloque-seu-token-aqui"
+
+# Prefixo padrão para comandos no Discord (opcional):
+# Deixe em branco se você não usar comandos prefixados por enquanto.
+prefix: "!"
+
+# Logs:
+# Ative ou desative logs do bot no console do servidor.
+logs: true
