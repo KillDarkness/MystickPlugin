@@ -9,22 +9,31 @@ commands:
   fly:
     description: Ativa ou desativa o modo de voo.
     usage: /fly [jogador]
-  
   vanish:
     description: Ativa ou desativa o modo vanish.
     usage: /vanish [list]
-
   ci:
     description: Limpa o inventário do jogador.
     usage: /ci [jogador]
-
   everyone:
     description: Envia um aviso Importante.
     usage: /everyone <mensagem>
+  heal:
+    description: Restaura a vida de um jogador.
+    usage: /heal [jogador]
+  feed:
+    description: Restaura a fome de um jogador.
+    usage: /feed [jogador]
 
 permissions:
   mystick.fly:
     description: Permite ativar/desativar o fly para si mesmo.
+    default: op
+  mystick.heal:
+    description: Permite curar a si mesmo.
+    default: op
+  mystick.feed:
+    description: Permite alimentar a si mesmo.
     default: op
   mystick.vanish:
     description: Permite ativar/desativar o vanish para si mesmo.
